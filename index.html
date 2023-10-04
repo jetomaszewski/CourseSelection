@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>High School Science Course Suggestions</title>
+    <style>
+        #course-suggestions {
+            white-space: pre;
+        }
+    </style>
     <script>
         function suggestCourses() {
             var selectedInterest = document.getElementById("interest").value;
@@ -27,7 +32,7 @@
             };
 
             if (selectedInterest in courseData) {
-                courseSuggestions = courseData[selectedInterest].join(", ");
+                courseSuggestions = courseData[selectedInterest].join("\n");
             } else {
                 courseSuggestions = "No course suggestions available for this interest.";
             }
@@ -57,6 +62,6 @@
         <option value="Pre-Medicine">Pre-Medicine</option>
     </select>
     <br><br>
-    <div id="course-suggestions"></div>
+    <pre id="course-suggestions"></pre>
 </body>
 </html>
