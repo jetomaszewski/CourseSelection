@@ -6,10 +6,10 @@
         function suggestCourses() {
             var selectedInterest = document.getElementById("interest").value;
             var courseSuggestions = "";
-            
+
             // Define the list of courses for each interest.
             var courseData = {
-                "Biology": ["Biology & Chemistry", "Advanced Placement Biology", "Anatomy & Physiology", "BioTechnology", "Environmental Science", "Forensic Chemistry", "Marine Biology"],
+                "Biology": ["Biology & Chemistry"("\n"), "Advanced Placement Biology", "Anatomy & Physiology", "BioTechnology", "Environmental Science", "Forensic Chemistry", "Marine Biology"],
                 "Chemistry": ["Advanced Placement Chemistry", "Forensic Chemistry", "BioTechnology", "Environmental Science", "Anatomy & Physiology", "Marine Biology"],
                 "Physics": ["Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism", "Advanced Placement Physics 1 : Algebra-Based", "Advanced Placement Physics 2: Algebra-Based"],
                 "Computer Science": ["Computer Science", "Advanced Placement Computer Science A", "Advanced Placement Computer Science Principles"],
@@ -25,14 +25,14 @@
                 "Nursing": ["Anatomy & Physiology (H)", "Biotechnology (H)"],
                 "Pre-Medicine": ["Anatomy & Physiology (H)", "Biotechnology (H)"]
             };
-            
+
             if (selectedInterest in courseData) {
-                courseSuggestions = courseData[selectedInterest].join("\n"); // Use \n for line breaks
+                courseSuggestions = courseData[selectedInterest].join(", ");
             } else {
                 courseSuggestions = "No course suggestions available for this interest.";
             }
-            
-            document.getElementById("course-suggestions").innerHTML = "Suggested High School Science Courses:<br>" + courseSuggestions;
+
+            document.getElementById("course-suggestions").innerHTML = "Suggested High School Science Courses: " + courseSuggestions;
         }
     </script>
 </head>
@@ -43,7 +43,18 @@
         <option value="Biology">Biology</option>
         <option value="Chemistry">Chemistry</option>
         <option value="Physics">Physics</option>
-        <!-- Add more options for other interests -->
+        <option value="Computer Science">Computer Science</option>
+        <option value="Environmental Science">Environmental Science</option>
+        <option value="Neuroscience">Neuroscience</option>
+        <option value="Astronomy">Astronomy</option>
+        <option value="Geology">Geology</option>
+        <option value="Biomedical Engineering">Biomedical Engineering</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Materials Science and Engineering">Materials Science and Engineering</option>
+        <option value="Microbiology">Microbiology</option>
+        <option value="Biotechnology">Biotechnology</option>
+        <option value="Nursing">Nursing</option>
+        <option value="Pre-Medicine">Pre-Medicine</option>
     </select>
     <br><br>
     <div id="course-suggestions"></div>
