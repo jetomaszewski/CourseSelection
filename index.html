@@ -27,7 +27,7 @@
             };
             
             if (selectedInterest in courseData) {
-                courseSuggestions = courseData[selectedInterest].join("<br>");
+                courseSuggestions = courseData[selectedInterest].join("\n");
             } else {
                 courseSuggestions = "No course suggestions available for this interest.";
             }
