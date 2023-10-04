@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>High School Science Course Suggestions</title>
+    <script>
+        function suggestCourses() {
+            var selectedInterest = document.getElementById("interest").value;
+            var courseSuggestions = "";
+            
+            // Define the list of courses for each interest.
+            var courseData = {
+                "Biology": ["Biology & Chemistry", "Advanced Placement Biology", "Anatomy & Physiology", "BioTechnology", "Environmental Science", "Forensic Chemistry", "Marine Biology"],
+                "Chemistry": ["Advanced Placement Chemistry", "Forensic Chemistry", "BioTechnology", "Environmental Science", "Anatomy & Physiology", "Marine Biology"],
+                "Physics": ["Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism", "Advanced Placement Physics 1 : Algebra-Based", "Advanced Placement Physics 2: Algebra-Based"],
+                "Computer Science": ["Computer Science", "Advanced Placement Computer Science A", "Advanced Placement Computer Science Principles"],
+                "Environmental Science": ["Environmental Science", "Advanced Placement Environmental Science", "Marine Ecology (H)"],
+                "Neuroscience": ["Neuroscience"],
+                "Astronomy": ["Astronomy"],
+                "Geology": ["Geology"],
+                "Biomedical Engineering": ["Biotechnology (H)", "Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism"],
+                "Chemical Engineering": ["Chemical Engineering", "Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism"],
+                "Materials Science and Engineering": ["Materials Science and Engineering", "Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism"],
+                "Microbiology": ["Microbiology"],
+                "Biotechnology": ["Biotechnology (H)", "Advanced Placement Physics C: Mechanics", "Advanced Placement Physics C: Electricity & Magnetism"],
+                "Nursing": ["Anatomy & Physiology (H)", "Biotechnology (H)"],
+                "Pre-Medicine": ["Anatomy & Physiology (H)", "Biotechnology (H)"]
+            };
+            
+            if (selectedInterest in courseData) {
+                courseSuggestions = courseData[selectedInterest].join(", ");
+            } else {
+                courseSuggestions = "No course suggestions available for this interest.";
+            }
+            
+            document.getElementById("course-suggestions").innerHTML = "Suggested High School Science Courses: " + courseSuggestions;
+        }
+    </script>
+</head>
+<body>
+    <h1>High School Science Course Suggestions</h1>
+    <label for="interest">Select Your Interest:</label>
+    <select id="interest" onchange="suggestCourses()">
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Environmental Science">Environmental Science</option>
+        <option value="Neuroscience">Neuroscience</option>
+        <option value="Astronomy">Astronomy</option>
+        <option value="Geology">Geology</option>
+        <option value="Biomedical Engineering">Biomedical Engineering</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Materials Science and Engineering">Materials Science and Engineering</option>
+        <option value="Microbiology">Microbiology</option>
+        <option value="Biotechnology">Biotechnology</option>
+        <option value="Nursing">Nursing</option>
+        <option value="Pre-Medicine">Pre-Medicine</option>
+    </select>
+    <br><br>
+    <div id="course-suggestions"></div>
+</body>
+</html>
