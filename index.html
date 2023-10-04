@@ -33,6 +33,7 @@
 
             if (selectedInterest in courseData) {
                 courseSuggestions = courseData[selectedInterest].join("\n");
+                courseSuggestions = "\n" + courseSuggestions;
             } else {
                 courseSuggestions = "No course suggestions available for this interest.";
             }
@@ -45,6 +46,7 @@
     <h1>High School Science Course Suggestions</h1>
     <label for="interest">Select Your Interest:</label>
     <select id="interest" onchange="suggestCourses()">
+        <option value="Choose an interest">Interest</option>
         <option value="Biology">Biology</option>
         <option value="Chemistry">Chemistry</option>
         <option value="Physics">Physics</option>
