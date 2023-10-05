@@ -44,7 +44,9 @@
                 courseSuggestions = "No course suggestions available for this interest.";
             }
 
-            document.getElementById("header").innerHTML = courseSuggestions;
+            document.getElementById("header").textContent = "Suggested High School Science Courses:";
+            document.getElementById("course-suggestions").textContent = courseSuggestions;
+
         }
     </script>
 </head>
@@ -68,6 +70,6 @@
         <option value="Pre-Medicine">Pre-Medicine</option>
     </select>
     <br><br>
-    <div id="course-suggestions"></div>
+    <pre id="course-suggestions"></pre>
 </body>
 </html>
