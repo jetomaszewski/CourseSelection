@@ -44,14 +44,13 @@
                 courseSuggestions = "No course suggestions available for this interest.";
             }
 
-            document.getElementById("header").textContent = "Suggested High School Science Courses:";
-            document.getElementById("course-suggestions").textContent = courseSuggestions;
+            document.getElementById("course-suggestions").innerHTML = "Suggested High School Science Courses: " + courseSuggestions;
 
         }
     </script>
 </head>
 <body>
-    <h1 id="header">High School Science Course Suggestions</h1>
+    <h1><strong>High School Science Course Suggestions</strong>strong></h1>
     <label for="interest"><strong>Select Your Interest:</strong></label>
     <select id="interest" onchange="suggestCourses()">
         <option value="Choose an interest">Choose an Interest</option>
